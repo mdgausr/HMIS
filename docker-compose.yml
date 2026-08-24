@@ -1,0 +1,28 @@
+version: "3.8"
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: hmis
+      POSTGRES_PASSWORD: hmis_pass
+      POSTGRES_DB: hmis
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+  abdm-mock:
+    build:
+      context: ./abdm-mock
+      dockerfile: Dockerfile
+    ports:
+      - "5005:80"
+
+volumes:
+  pgdata:
