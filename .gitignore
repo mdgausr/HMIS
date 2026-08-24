@@ -1,0 +1,30 @@
+/bin/
+obj/
+.vs/
+.env
+docker-compose.override.yml
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio Code
+.vscode/
+
+# Logs
+logs/
+*.log
+
+# NuGet
+*.nupkg
+
+# Publish
+publish/
+
+# dotnet
+*.db
+*.db-shm
+*.db-wal
+
+# Rider
+.idea/
